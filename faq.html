@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns='http://www.w3.org/1999/xhtml' itemscope itemtype="http://schema.org/WebPage" class="webkit chrome win js sticky-header-enabled sticky-header-negative">
+
+<head itemscope itemtype="http://schema.org/WebSite">
+<meta charset="utf-8">
+    <!-- <base href="https://infocea.fr/"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='language' content='FR'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+    <meta itemprop="name" content="Infocea.fr" />
+        <meta property='og:url'
+        content='http://localhost/infocea-new/faq.html' />
+    <link itemprop="url"
+        href='http://localhost/infocea-new/faq.html'
+        rel='canonical' />
+        <!-- Google tag (gtag.js) -->
+            
+    <title>Infocea - Foire aux questions</title>
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <meta property='og:title' content="Infocea - Foire aux questions" />
+    <meta property='og:description' content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+        content="http://localhost/Template/Images/logo.webp" />
+        <meta name="google-site-verification" content="X6F_CDcVaQm0yfFv2caFkD3lW_SJi7dxXXts_-wqaqE" />
+    <meta name="msvalidate.01" content="5F58DB422B8ED7E437650205EF87DB26" />
+    <meta name='robots' content='index, follow' />
+    <meta name='GOOGLEBOT' content='index, follow' />
+    <meta name='yahooBOT' content='index, follow' />
+    <meta name='bingbot' content='index, follow' />
+
+    <link rel="icon" type="image/png" href="./Template/Images/favicon.webp" />
+    <link rel="apple-touch-icon" href="./Template/Images/apple-touch-icon.webp">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4SX8QNMDN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-K4SX8QNMDN');
+    </script>
+    
+    <link rel="stylesheet" href="./Template/Css/Plug/Gnr-plugins.css" />
+    <link rel="stylesheet" href="./Template/Css/Cus-styles.css" />
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body class="alternative-font-7">
+
+<div class="modal fade" id="formModal2" tabindex="-1" aria-labelledby="formModalLabel2" style="display: none;"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="formModalLabel">Rappel gratuit</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formRappel" class="contact-form custom-form-style-1 validate-form form-default"
+                            action="./actions/ins-devis.html" method="POST" novalidate="novalidate">
+                            <input type="hidden" name="form_type" value="rappel">
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label class="form-label required text-2 mb-0">Nom</label>
+                                    <input type="text" value="" data-msg-required="Le nom est requis" maxlength="100"
+                                        class="form-control" name="nom" required>
+                                </div>
+                                <div class="form-group col">
+                                    <label class="form-label required text-2 mb-0">Prénom</label>
+                                    <input type="text" value="" data-msg-required="Le prénom est requis" maxlength="100"
+                                        class="form-control" name="prenom" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label class="form-label required text-2 mb-0">Téléphone</label>
+                                    <input type="text" value="" data-msg-required="Le numéro de téléphone est requis"
+                                        maxlength="14" class="form-control num-tel form_tel_mask" name="telephone"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="notice mt-1 mb-0 font-weight-semibold line-height-4">En cliquant sur «
+                                        Envoyer », vous acceptez d'être recontacté par téléphone et/ou e-mail*</p>
+                                </div>
+                            </div>
+                            <div class="m-0">
+                                <center>
+                                    <div class="g-recaptcha" id="g-captcha-rappel"></div>
+                                    <input disabled="disabled" class="g-recaptcha-checker"
+                                        data-msg-required="Veuillez confirmer que vous n'êtes pas un robot"
+                                        name="g-recaptcha-checker" type="text"
+                                        style="opacity: 0; position: absolute; top: 0; left: 0; height: 1px; width: 1px;"
+                                        required />
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary"
+                            onclick="submitForm('formRappel')">Envoyer</button>
+                       <p class="small-form-txt">
+                            Conformément à l’article L 223-1 et suivants du Code de la consommation, vous disposez d’un
+                            droit d’opposition que vous pouvez exercer en adressant une demaine à <a
+                                href="mailto:dpo@infocea.fr">dpo@infocea.fr</a> .Pour en savoir plus sur la manière dont
+                            nous traitons vos données, veuillez consulter notre <a class="bottom-txt-link"
+                                href="./Protection-des-donnees-personnelles.html"
+                                title="Protection des données personnelles">Protection des données personnelles</a>
+                        </p>
+                        <p class="notice-star  mt-1 mb-0">* Pour vous conseiller au mieux dans le cadre de votre
+                            démarche, vous pourrez être recontacté par un conseiller mandaté d’Infocea Assurances
+                            <strong>(n°ORIAS 16002278)</strong>. Vous pourrez vous y opposer dès le premier contact.
+                            Vous serez également susceptible de recevoir des communications par SMS à propos de votre
+                            demande de devis.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="gdpr-bar" cookies-popup>
+        <div class="gdpr-bar-description">
+            <p class="text-color-light opacity-7 mb-0 text-1 line-height-3">
+                Nous utilisons des cookies pour améliorer l'expérience utilisateur et analyser le trafic du site
+                Web.<br>
+                Découvrez comment nous utilisons les cookies et comment vous pouvez les contrôler en cliquant sur «
+                Gérer les cookies ».</p>
+        </div>
+        <div class="gdpr-bar-actions">
+            <a href="#" class="gdpr-preferences-trigger gdpr-pop">Gérer les cookies</a>
+            <a href="#"
+                class="gdpr-agree-trigger text-decoration-none submit-btn btn btn-primary btn-modern">J'accepter</a>
+        </div>
+    </div>
+
+    <div class="gdpr-preferences-popup">
+        <div class="gdpr-preferences-popup-content form-area-wrapper position-relative">
+            <a href="#" class="gdpr-close-popup text-color-grey text-color-hover-dark">
+                <i class="fa fa-times-circle pop-close" aria-hidden="true"></i>
+            </a>
+            <form class="gdpr-preferences-form">
+                <div class="gdpr-preferences-popup-content-body">
+                    <p class="text-color-dark font-weight-bold mb-3 text-5">Gérer les cookies</p>
+                    <p class="line-height-3 text-1 text-color-dark">Lorsque vous consultez un site Web, des données
+                        peuvent être stockées dans
+                        votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies. Ces
+                        informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont
+                        principalement utilisées pour s'assurer que le site Web fonctionne correctement. Les
+                        informations ne permettent généralement pas de vous identifier directement, mais peuvent vous
+                        permettre de bénéficier d'une expérience Web personnalisée. Parce que nous respectons votre
+                        droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de
+                        cookies. Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d'entre
+                        elles, et modifier les paramètres par défaut. Toutefois, si vous bloquez certains types de
+                        cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir
+                        peuvent être impactés.</p>
+                    <hr style="border-top: 1px solid rgb(255 255 255 / 16%);">
+
+                    <div class="gdpr-cookie-item">
+                        <div class="gdpr-cookie-item-title">
+                            <strong class="text-color-dark">Fonctionnement</strong>
+                        </div>
+                        <div class="gdpr-cookie-item-description">
+                            <p class="mb-0 line-height-3 text-1">Ces cookies permettent d’améliorer et de personnaliser
+                                les
+                                fonctionnalités du site Web. Ils peuvent être activés par nos équipes, ou par des tiers
+                                dont les services sont utilisés sur les pages de notre site Web. Si vous n'acceptez pas
+                                ces cookies, une partie ou la totalité de ces services risquent de ne pas fonctionner
+                                correctement.</p>
+                        </div>
+                        <div class="gdpr-cookie-item-action">
+                            <strong class="text-color-dark">OBLIGATOIRE</strong>
+                        </div>
+                    </div>
+                    <div class=" gdpr-cookie-item mt-3">
+                        <div class="gdpr-cookie-item-title">
+                            <strong class="text-color-dark">Analytics</strong>
+                        </div>
+                        <div class=" gdpr-cookie-item-description">
+                            <p class="mb-0 line-height-3 text-1">Ces cookies nous permettent de déterminer le nombre de
+                                visites et les sources du trafic, afin de mesurer et d’améliorer les
+                                performances de notre site Web. Ils nous aident également à identifier les
+                                pages les plus / moins visitées et d’évaluer comment les visiteurs naviguent
+                                sur le site Web. Toutes les informations collectées par ces cookies sont
+                                agrégées et donc anonymisées. Si vous n'acceptez pas ces cookies, nous ne
+                                serons pas informé de votre visite sur notre site.</p>
+                        </div>
+                        <div class="gdpr-cookie-item-action">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input gdpr-input" type="checkbox" name="cookies_consent[]"
+                                    value="analytics">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdpr-cookie-item">
+                        <div class="gdpr-cookie-item-title">
+                            <strong class="text-color-dark">Marketing</strong>
+
+                        </div>
+                        <div class=" gdpr-cookie-item-description">
+                            <p class="mb-0 line-height-3 text-1">Ces cookies et traceurs sont utilisés pour proposer des
+                                parcours ou contenus personnalisés. Ils permettent d’analyser les centres
+                                d’intérêt ou les besoins utilisateurs afin de soumettre des publicités en
+                                fonction de la pertinence de ces derniers, et améliorer les rapports sur les
+                                performances des campagnes.</p>
+                        </div>
+                        <div class="gdpr-cookie-item-action">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input gdpr-input" type="checkbox" name="cookies_consent[]"
+                                    value="publicites">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gdpr-preferences-popup-content-footer">
+                    <button type="submit" class="submit-btn btn btn-primary btn-modern">Sauvegarder</button>
+                    <a href="./cookies.html" class="text-color-default bottom-txt-link">Politique des Cookies</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="loading-overlay" style="background-color: rgb(255, 255, 255); border-radius: 0px;">
+        <div class="bounce-loader">
+            <div class="wrapper-pulse">
+                <div class="cssload-pulse-loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <header id="header"
+            data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 161, 'stickySetTop': '-161px', 'stickyChangeLogo': true}"
+            style="height: 172.148px;">
+            <div class="header-body box-shadow-none" style="top: 0px;">
+                <div class="header-top header-top-borders">
+                    <div class="container container-xl-custom h-100">
+                        <div class="header-row h-100">
+                            <div class="header-column justify-content-start">
+                                <div class="header-row">
+                                    <nav class="header-nav-top">
+                                        <ul class="nav nav-pills">
+                                            <li class="nav-item d-none d-sm-inline-flex pe-1">
+                                                <span class="ps-0 text-color-default text-2-4"><i
+                                                        class="icons icon-location-pin text-4 top-3"></i>: 191 Lieu dit les beurrons rd 191, 78680 Épône</span>
+                                            </li>
+                                            <li class="nav-item d-none d-md-inline-flex pe-1">
+                                                <a href="mailto:contact@infocea.fr"
+                                                    class="text-color-default text-2-4 text-color-hover-primary"><i
+                                                        class="icons icon-envelope text-4 top-3"></i>:
+                                                    contact@infocea.fr</a>
+                                            </li>
+                                            <li class="nav-item d-none d-md-inline-flex">
+                                                <a href="tel:0272349211"
+                                                    class="text-color-default text-2-4 text-color-hover-primary"><i
+                                                        class="icons icon-printer text-4 top-3"></i>: 02 72 34 92 11</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="header-column justify-content-end">
+                                <div class="header-row">
+                                    <nav class="header-nav-top">
+                                        <ul class="nav nav-pills p-relative bottom-2">
+                                            <li class="nav-item d-none d-lg-inline-flex">
+                                                <a href="#" target="_blank" title="Facebook"
+                                                    class="text-color-dark text-color-hover-primary text-2-5">Recrutement</a>
+                                            </li>
+                                            <li class="nav-item d-none d-lg-inline-flex">
+                                                <a href="#" target="_blank" title="X"
+                                                    class="text-color-dark text-color-hover-primary text-2-5">Plan du
+                                                    site</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-bottom-light">
+                    <div class="header-container container container-xl-custom">
+                        <div class="header-row py-4">
+                            <div class="header-column">
+                                <div class="header-row">
+                                    <div class="header-logo m-0">
+                                        <a href="./index.html">
+                                            <img alt="Infocea" width="185" height="65"
+                                                src="./Template/Images/logo.webp">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-column justify-content-end align-items-center flex-row">
+                                <div class="hstack gap-4 ps-4 font-weight-semi-bold">
+                                    <div class="d-none d-lg-inline-block">
+                                        <ul class="nav nav-pills me-1">
+                                            <li class="nav-item">
+                                                <a href="#" target="_blank"
+                                                    title="ISAE"
+                                                    class="text-color-dark text-color-hover-primary text-2">
+                                                    <img loading="lazy"
+                                                        src="./Template/Images/Bg/isae.webp"
+                                                        class="img-fluid op-hover" width="85" height="81" alt="ISAE"
+                                                        title="ISAE" />
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="./Label.html"
+                                                    target="_blank" title="Instagram"
+                                                    class="text-color-dark text-color-hover-primary text-2">
+                                                    <img loading="lazy"
+                                                        src="./Template/Images/Bg/label.webp"
+                                                        class="img-fluid op-hover" width="85" height="81" alt="Label"
+                                                        title="Label" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="vr opacity-2 d-none d-lg-inline-block"></div>
+                                    <div class="d-none d-lg-inline-block">
+                                        <ul class="nav nav-pills me-1">
+                                            <li class="nav-item pe-2 mx-1">
+                                                <a href="https://www.facebook.com/infoceaassurances" target="_blank"
+                                                    title="Facebook"
+                                                    class="text-color-dark text-color-hover-primary text-2"><i
+                                                        class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li class="nav-item px-2 mx-1">
+                                                <a href="https://www.linkedin.com/company/infocea"
+                                                    target="_blank" title="Instagram"
+                                                    class="text-color-dark text-color-hover-primary text-2"><i
+                                                        class="fab fa-linkedin"></i></a>
+                                            </li>
+                                            <li class="nav-item px-2 mx-1">
+                                                <a href="https://www.instagram.com/infocea_assurances/"
+                                                    target="_blank" title="Instagram"
+                                                    class="text-color-dark text-color-hover-primary text-2"><i
+                                                        class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li class="nav-item px-2 mx-1 me-0 pe-0">
+                                                <a href="https://t.snapchat.com/fo2lkJqi" target="_blank"
+                                                    title="Linkedin"
+                                                    class="text-color-dark text-color-hover-primary text-2"><i
+                                                        class="fab fa-snapchat-ghost"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="vr opacity-2 d-none d-lg-inline-block"></div>
+                                    <div>
+                                        <a href="tel:0249881005"
+                                            class="d-flex align-items-center text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold ms-1">
+                                            <i class="icon icon-phone text-color-primary text-4-5 me-2"></i>
+                                            02 49 88 10 05                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-nav-bar z-index-0">
+                    <div class="container container-xl-custom">
+                        <div class="header-row py-2">
+                            <div class="header-column">
+                                <div class="header-row align-items-center justify-content-end">
+                                    <div class="header-nav header-nav-links justify-content-start pb-1">
+                                        <div
+                                            class="header-nav-main header-nav-main-text-capitalize header-nav-main-effect-2 header-nav-main-sub-effect-1">
+                                            <nav class="collapse">
+                                                <ul class="nav nav-pills" id="mainNav">
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-item dropdown-toggle" href="#">
+                                                            À propos
+                                                            <i class="fas fa-chevron-down"></i></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="nav-link" href="./Qui-sommes-nous.html">Qui
+                                                                    sommes-nous ?</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Mot-president.html">Mot du
+                                                                    Président</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Label.html">Label
+                                                                    Platinum</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Nos-partenaires.html">Nos
+                                                                    partenaires</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown dropdown-mega"> <a
+                                                            class="dropdown-item dropdown-toggle" href="./Nos-solutions.html">
+                                                            Nos solutions <i class="fas fa-chevron-down"></i></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <div class="dropdown-mega-content">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <ul class="dropdown-mega-sub-nav">
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-fausse-declaration.html">Assurance
+                                                                                        Auto fausse déclaration</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto.html">Assurance
+                                                                                        Auto classique</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-non-paiement.html">Assurance
+                                                                                        Auto non-paiement</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-retrait-de-permis.html">Assurance
+                                                                                        Auto retrait de permis</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-sinistre.html">Assurance
+                                                                                        Auto sinistres</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-alcoolemie.html">Assurance
+                                                                                        Auto alcoolémie</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./Demande-devis-assurance-auto-malus.html">Assurance
+                                                                                        Auto-malus</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="dropdown-item"
+                                                                                        href="./assurance-auto-temporaire.html">Assurance
+                                                                                        Auto temporaire</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <ul class="dropdown-mega-sub-nav">
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-voiture-sans-permis.html">Assurance
+                                                                                        Voiture sans permis</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./assurance-decennale.html">Assurance
+                                                                                        Décennale</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./assurance-emprunteur.html">Assurance
+                                                                                        Emprunteur</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-habitation.html">Assurance
+                                                                                        Habitation</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-moto.html">Assurance
+                                                                                        Moto</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-prevoyance.html">Assurance
+                                                                                        Prévoyance</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-professionnelle.html">Assurance
+                                                                                        Professionnelle</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="nav-link"
+                                                                                        href="./Demande-devis-assurance-sante.html">Assurance
+                                                                                        Santé et prévoyance</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-item dropdown-toggle" href="./Demande-devis.html">
+                                                            Demande de devis
+                                                            <i class="fas fa-chevron-down"></i></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="nav-link" href="./Demande-devis-Guadeloupe.html">Demande de devis Guadeloupe</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Demande-devis-Guyane.html">Demande de devis Guyane</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Demande-devis-ile-de-la-reunion.html">Demande de devis Île de la Réunion</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="nav-link" href="./Demande-devis-Martinique.html">Demande de devis Martinique</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="./Actualites.html" class="nav-link">Actualités</a></li>
+                                                    <li><a href="./Avis-client.html" class="nav-link">Avis clients</a>
+                                                    </li>
+                                                    <li><a href="./Nous-contacter.html"
+                                                            class="nav-link">Contactez-nous</a></li>
+                                                            <li><a href="./faq.html"
+                                                            class="nav-link">Faq</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <a href="./Devenir-partenaire.html"
+                                        class="btn btn-modern btn-dark font-weight-bold border-0 btn-arrow-effect-1 me-3"><i
+                                            class="fa fa-handshake me-2"></i> Devenir partenaire</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#formModal2" 
+                                        class="btn btn-modern btn-primary font-weight-bold border-0 btn-arrow-effect-1"><i
+                                            class="fa fa-sign-in-alt me-2"></i> Rappel gratuit</a>
+                                    <button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+                                        data-bs-target=".header-nav-main nav">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<div role="main" class="main">
+    <section class="page-header page-header-modern page-header-lg m-0">
+        <div class="container container-xl-custom">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-light font-weight-bold">Foire aux question</h1>
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+                    <ul class="breadcrumb d-block text-md-end font-weight-medium">
+                        <li><a href="#">Accueil</a></li>
+                        <li class="active">Foire aux question</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-0 py-5 m-0">
+        <div class="container container-xl-custom">
+            <div class="row mb-3">
+                <div class="col-lg-10 text-left">
+                    <div class="overflow-hidden">
+                        <h4 class="text-primary text-3 font-weight-bold mb-2">INFOCEA FAQ</h4>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                        <h3 class="font-weight-bold text-transform-none text-9 line-height-2 mb-0 appear-animation"
+                            data-appear-animation="maskUp" data-appear-animation-delay="400">BESOIN D'AIDE ?
+
+                        </h3>
+                    </div>
+                    <p class="mb-4 pb-2 font-weight-regular custom-font-secondary mb-0 appear-animation"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">Vous trouverez des réponses complètes à vos questions concernant l'assurance.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form action="./faq-rechercher.html" method="get">
+                                <div class="input-group sr-input sr-input-w mb-3 pb-1">
+                                    <input style="background-color: #ff000000 !important;" value="" class="form-control box-shadow-none border-0 bg-color-grey search-input text-3" placeholder="Saisissez votre question ou un mot-clé" name="query" id="s" type="text">
+                                    <button style="background-color: #ff000000 !important;" type="submit" class="btn bg-color-grey search-input text-1 p-2" name="recherche_submit" value="true"><i class="fas fa-search m-2"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="tabs tabs-bottom tabs-center tabs-simple">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance auto" aria-label="Assurance auto" target="_self" href="./faq-theme.html?id=2">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-auto.png" alt="Assurance auto" title="Assurance auto" width="90" height="106" class="text-center py-2">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance santé" aria-label="Assurance santé" target="_self" href="./faq-theme.html?id=3">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-sante.png" alt="Assurance santé" title="Assurance santé" width="80" height="96" class="text-center py-2">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance habitation" aria-label="Assurance habitation" target="_self" href="./faq-theme.html?id=4">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-habitation.png" alt="Assurance habitation" title="Assurance habitation" width="80" height="96" class="text-center py-2">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance professionnelle" aria-label="Assurance professionnelle" target="_self" href="./faq-theme.html?id=5">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-pro.png" alt="Assurance professionnelle" title="Assurance professionnelle" width="80" height="96" class="text-center py-2">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance moto" aria-label="Assurance moto" target="_self" href="./faq-theme.html?id=6">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-moto.png" alt="Assurance moto" title="Assurance moto" width="80" height="96" class="text-center py-2">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center s-130 border-radius-half" title="Assurance prévoyance" aria-label="Assurance prévoyance" target="_self" href="./faq-theme.html?id=7">
+                                    <img loading="lazy" src="./Template/Images/Icons/ic-prevoyance.png" alt="Assurance prévoyance" title="Assurance prévoyance" width="80" height="96" class="text-center py-2">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-primary font-weight-bold mb-2 text-6">Questions diverses</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mx-lg-4">
+
+                <div class="col-md-6">
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=1" title="FAQ - Souscription" aria-label="FAQ - Souscription" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-souscription.webp" alt="Souscription" title="Souscription" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Souscription
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=2" title="FAQ - Indemnisation" aria-label="FAQ - Indemnisation" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-indemnisation.webp" alt="Indemnisation" title="Indemnisation" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Indemnisation
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=3" title="FAQ - Sinistre" aria-label="FAQ - Sinistre" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-sinistre.webp" alt="Sinistre" title="Sinistre" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Sinistre
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=4" title="FAQ - Garanties" aria-label="FAQ - Garanties" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-garanties.webp" alt="Garanties" title="Garanties" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Garanties
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=5" title="FAQ - Assistance" aria-label="FAQ - Assistance" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-assistance.webp" alt="Assistance" title="Assistance" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Assistance
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordion-style-1">
+                        <div class="card card-default accor-custom my-2">
+                            <div class="card-header">
+                                <a href="./faq-category.html?id=1&cat=6" title="FAQ - Contact" aria-label="FAQ - Contact" target="_self">
+                                    <h3 class="card-title m-0 text-4-5">
+                                        <img loading="lazy" src="./Template/Images/Icons/ic-accor-contact.webp" alt="Contact" title="Contact" width="30" height="30" />
+                                        <span class="text-2 text-color-black font-weight-bold collapsed">
+                                            Contact
+                                        </span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<footer id="footer" class="position-relative mt-0 border-top-0">
+    <div class="container container-xl-custom py-4">
+        <div class="row py-3 footer-top">
+            <div class="col mb-5 mb-md-0">
+                <div
+                    class="feature-box flex-column flex-xl-row align-items-center align-items-lg-start text-center text-lg-start">
+                    <div class="feature-box-icon bg-transparent mb-4 mb-xl-0 p-0">
+                        <img loading="lazy" src="./Template/Images/Icons/icon-newsletter.png" class="img-fluid op-hover" width="85" height="81" alt="Newsletter" title="Newsletter">
+                    </div>
+                    <div class="feature-box-info line-height-1 ps-2">
+                        <div class="alert alert-danger d-none" id="newsletterError"></div>
+                    <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+                        <h4 class="text-color-light ws-nowrap me-3 mb-3 mb-lg-0">Abonnez-vous à notre newsletter:</h4>
+                        <form id="newsletterForm" class="form-style-3 w-100" action="php/newsletter-subscribe.html"
+                            method="POST" novalidate="novalidate">
+                            <div class="d-flex">
+                                <input class="form-control bg-color-light border-0 box-shadow-none"
+                                    placeholder="Votre adresse mail" name="newsletterEmail" id="newsletterEmail" type="text">
+                                <button class="btn btn-primary ms-2 btn-px-3 btn-py-2 font-weight-bold" type="submit">
+                                    S’ABONNER
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="bg-light opacity-2 my-0">
+    <div class="container container-xl-custom pt-4 pb-3">
+        <div class="row pt-4">
+            <div class="col-md-6 col-lg-3">
+                <a href="./index.html">
+                    <img src="./Template/Images/logo-w.webp" class="img-fluid mb-4" width="150">
+                </a>
+                <p class="mb-0 line-height-5 pb-4 text-3-4">Infocea Assurances est un courtier en assurances (Santé,
+                    auto, moto…) qui recherche pour vous la meilleure solution pour votre couverture. Avec Infocea
+                    Assurances vous découvrirez une large gamme de services répondant à tous vos besoins.</p>
+                <ul class="social-icons social-icons-clean social-icons-medium">
+                    <li class="social-icons-facebook">
+                        <a href="https://www.facebook.com/infoceaassurances" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f text-color-light"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-linkedin">
+                        <a href="https://www.linkedin.com/company/infocea" target="_blank" title="Linkedin">
+                            <i class="fab fa-linkedin text-color-light"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-instagram">
+                        <a href="https://www.instagram.com/infocea_assurances/" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram text-color-light"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-snapchat">
+                        <a href="https://t.snapchat.com/fo2lkJqi" target="_blank" title="Snapchat">
+                            <i class="fab fa-snapchat text-color-light"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-2 mt-4 mt-lg-0">
+                <h3 class="mb-3 text-4-5 text-color-light">À propos</h3>
+                <ul class="list list-unstyled font-weight-medium">
+                    <li><a href="./Qui-sommes-nous.html" class="text-color-grey text-color-hover-primary">Qui sommes-nous
+                            ?</a></li>
+                    <li><a href="./Mot-president.html" class="text-color-grey text-color-hover-primary">Mot du
+                            Président</a></li>
+                    <li><a href="./Label.html" class="text-color-grey text-color-hover-primary">Label Platinum</a></li>
+                    <li><a href="./Nos-partenaires.html" class="text-color-grey text-color-hover-primary">Nos
+                            partenaires</a></li>
+                </ul>
+                <h3 class="mb-3 text-4-5 text-color-light">Liens utiles</h3>
+                <ul class="list list-unstyled font-weight-medium">
+                    <li><a href="./Actualites.html" class="text-color-grey text-color-hover-primary">Actualités</a></li>
+                    <li><a href="./Avis-client.html" class="text-color-grey text-color-hover-primary">Avis clients</a>
+                    </li>
+                    <li><a href="./Label.html" class="text-color-grey text-color-hover-primary">Contactez-nous</a></li>
+                    <li><a href="./recrutement.html" class="text-color-grey text-color-hover-primary">Recrutement</a>
+                    </li>
+                    <li><a href="./faq.html" class="text-color-grey text-color-hover-primary">Faq</a></li>
+                </ul>
+
+            </div>
+            <div class="col-md-6 col-lg-4 mt-4 mt-lg-0">
+                <h3 class="mb-3 text-4-5 text-color-light">Nos solutions</h3>
+                <ul class="list list-unstyled columns-lg-2 font-weight-medium">
+                    <li><a href="./Demande-devis-assurance-auto-fausse-declaration.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto fausse déclaration</a></li>
+                    <li><a href="./Demande-devis-assurance-auto.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto classique</a></li>
+                    <li><a href="./Demande-devis-assurance-auto.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto non-paiement</a></li>
+                    <li><a href="./Demande-devis-assurance-auto-retrait-de-permis.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto retrait de permis</a></li>
+                    <li><a href="./Demande-devis-assurance-auto-sinistre.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto sinistres</a></li>
+                    <li><a href="./Demande-devis-assurance-auto-alcoolemie.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto alcoolémie</a></li>
+                    <li><a href="./Demande-devis-assurance-auto-malus.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto-malus</a></li>
+                    <li><a href="./assurance-auto-temporaire.html"
+                            class="text-color-grey text-color-hover-primary">Assurance Auto temporaire</a></li>
+                    <li><a href="./Demande-devis-assurance-voiture-sans-permis.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Voiture sans permis</a></li>
+                    <li><a href="./assurance-decennale.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Décennale</a></li>
+                    <li><a href="./assurance-emprunteur.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Emprunteur</a></li>
+                    <li><a href="./Demande-devis-assurance-habitation.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Habitation</a></li>
+                    <li><a href="./Demande-devis-assurance-moto.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Moto</a></li>
+                    <li><a href="./Demande-devis-assurance-prevoyance.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Prévoyance</a></li>
+                    <li><a href="./Demande-devis-assurance-professionnelle.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Professionnelle</a></li>
+                    <li><a href="./Demande-devis-assurance-sante.html" target="_blank"
+                            class="text-color-grey text-color-hover-primary">Assurance Santé et prévoyance</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <h3 class="mb-3 text-4-5 text-color-light">Contact</h3>
+                <div class="footer-block mb-2 line-height-2">
+                    <i class="icon-location-pin p-1"></i>
+                    <p itemprop="address" class="text-3 mb-0 text-color-grey" itemscope=""
+                        itemtype="http://schema.org/PostalAddress"><span
+                            class="text-uppercase text-color-light text-shadow fst-italic text-2 footer-ttl">Adresse</span>
+                        : 191 Lieu dit les beurrons rd 191, 78680 Épône</p>
+                </div>
+
+                <div class="footer-block mb-2 line-height-2">
+                    <i class="icon-phone p-1"></i>
+                    <p itemprop="tel" class="text-3 mb-0" itemscope="" itemtype="http://schema.org/PostalAddress"><span
+                            class="text-uppercase text-color-light text-shadow fst-italic text-2 footer-ttl">Tel</span>
+                        :
+                        <a class="text-color-grey" itemprop="telephone" title="Téléphone" href="tel:0249881005">02 49 88 10 05</a>
+                    </p>
+                </div>
+
+                <div class="footer-block mb-2 line-height-2">
+                    <i class="icon-earphones-alt p-1"></i>
+                    <p itemprop="fax" class="text-3 mb-0" itemscope="" itemtype="http://schema.org/PostalAddress"><span
+                            class="text-uppercase text-color-light text-shadow fst-italic text-2 footer-ttl">Fax</span>
+                        :
+                        <a class="text-color-grey" itemprop="fax" title="fax" href="tel:0272349211">02 72 34 92 11</a>
+                    </p>
+                </div>
+
+                <div class="footer-block mb-2 line-height-2">
+                    <i class="icon-envelope p-1"></i>
+                    <p itemprop="email" class="text-3 mb-0" itemscope="" itemtype="http://schema.org/PostalAddress">
+                        <span
+                            class="text-uppercase text-color-light text-shadow fst-italic text-2 footer-ttl">E-mail</span>
+                        :
+                        <a class="text-color-grey" itemprop="email" title="email"
+                            href="mailto:contact@infocea.fr">contact@infocea.fr</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright bg-transparent mt-3">
+        <div class="container container-xl-custom">
+            <hr class="bg-color-light opacity-1">
+            <div class="row pb-2">
+                <div class="col d-flex align-items-center text-center justify-content-center mb-1 mb-lg-0">
+                    <nav id="sub-menu">
+                        <ul class="text-4">
+                            <li class="p-0"><a target="_self" href="./Protection-des-donnees-personnelles.html"
+                                    class="ml-1 text-decoration-none" title="Protection des données personnelles"
+                                    aria-label="Protection des données personnelles">Protection des données
+                                    personnelles</a>
+                            </li>
+                            <li class="p-0"><span class="px-2">|</span><a target="_self" href="./Mentions-legales.html"
+                                    class="ml-1 text-decoration-none" title="Mentions légales"
+                                    aria-label="Mentions légales">Mentions légales</a></li>
+                            <li class="p-0"><span class="px-2">|</span><a target="_self" href="./Reclamation.html"
+                                    class="ml-1 text-decoration-none" title="Réclamations"
+                                    aria-label="Réclamations">Réclamations</a></li>
+                            <li class="p-0"><span class="px-2">|</span><a target="_self" href="#"
+                                    class="ml-1 text-decoration-none" title="Plan du site"
+                                    aria-label="Plan du site">Plan du site</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <p class="text-center text-color-grey text-3 mb-0">© Copyright 2018. INFOCEA ASSURANCES</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="./Template/Js/Plug/Lan-plugins.js"></script>
+<script src="./Template/Js/Main-lan.js"></script>
+<script src="//google.com/recaptcha/api.js?hl=fr-FR&render=explicit" async defer></script>
+
+<a class="scroll-to-top hidden-mobile" href="./#" aria-label="Scroll To Top"><i class="fas fa-chevron-up"></i></a>
+
+</body>
+</html>
